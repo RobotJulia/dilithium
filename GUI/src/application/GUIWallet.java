@@ -1,4 +1,5 @@
-package application;
+//package org.dilithium.application;
+package org.dilithium.application;
 
 import java.awt.EventQueue;
 
@@ -7,20 +8,9 @@ import javax.swing.JLabel;
 
 //import org.bouncycastle.jce.provider.BouncyCastleProvider;
 
-import com.google.zxing.BarcodeFormat;
-import com.google.zxing.WriterException;
-import com.google.zxing.client.j2se.MatrixToImageWriter;
-import com.google.zxing.common.BitMatrix;
-import com.google.zxing.qrcode.QRCodeWriter;
-
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
-import java.io.IOException;
-import java.math.BigInteger;
-import java.nio.file.FileSystems;
-import java.nio.file.Path;
-import java.security.Security;
 import java.awt.event.ActionEvent;
 import java.awt.SystemColor;
 

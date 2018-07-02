@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="552.0" prefWidth="969.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Control">
+   <children>
+      <ImageView fitHeight="552.0" fitWidth="969.0">
+         <image>
+            <Image url="@../../../../../../../../../Pictures/blue-construction-paper-texture.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="sendButton" layoutX="113.0" layoutY="461.0" onAction="#Send" style="-fx-background-color: #6C5B7B;" text="Send" textFill="#f8b195" />
+      <JFXButton fx:id="recieveButton" layoutX="277.0" layoutY="461.0" onAction="#Recieve" style="-fx-background-color: #6C5B7B;" text="Recieve" textFill="#f8b195" />
+      <JFXButton fx:id="QRCodeButton" layoutX="445.0" layoutY="461.0" onAction="#QRCode" style="-fx-background-color: #6C5B7B;" text="QR Code" textFill="#f8b195" />
+      <Label layoutX="91.0" layoutY="76.0" text="Balance" textFill="#f8b195">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <Label fx:id="Balance" layoutX="115.0" layoutY="129.0" text="\$ 0" textFill="#f8b195">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="shopButton" layoutX="840.0" layoutY="461.0" onAction="#getShop" style="-fx-background-color: #6C5B7B;" text="Shop" textFill="#f8b195" />
+      <JFXButton fx:id="logoutButton" layoutX="834.0" layoutY="87.0" onAction="#Close" style="-fx-background-color: #6C5B7B;" text="Logout" textFill="#f8b195" />
+      <JFXButton fx:id="chatButton" layoutX="662.0" layoutY="461.0" onAction="#Chat" style="-fx-background-color: #6C5B7B;" text="Chat" textFill="#f8b195" />
+      <ImageView fitHeight="289.0" fitWidth="444.0" layoutX="578.0" layoutY="141.0" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../../Pictures/Dilithium-large.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="380.0" layoutY="46.0" text="Dilithium" textFill="#f8b195">
+         <font>
+            <Font name="Book Antiqua Bold Italic" size="47.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

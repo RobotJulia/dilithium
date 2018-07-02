@@ -1,17 +1,15 @@
-package application;
+package org.dilithium.application;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-import java.awt.Font;
 import javax.swing.JTextField;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.WriterException;
 import com.google.zxing.client.j2se.MatrixToImageWriter;
-import com.google.zxing.common.BitMatrix;
 import com.google.zxing.common.ByteMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 
@@ -22,11 +20,8 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.FileSystems;
 import java.nio.file.Path;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.SystemColor;
 
 public class QRCodeGUI {
@@ -73,7 +68,7 @@ public class QRCodeGUI {
 		panel.setBounds(23, 170, 500, 500);
 		frmQRCode.getContentPane().add(panel);
 		panel.setBackground(Color.GRAY); 
-	    ImageIcon icon = new ImageIcon("MyQrCode.png"); // 
+	    ImageIcon icon = new ImageIcon("Code0.png"); 
 	    JLabel label = new JLabel(); 
 	    label.setIcon(icon); 
 	    panel.add(label);
@@ -89,7 +84,7 @@ public class QRCodeGUI {
 			String walletStr = "10101010101010101010101010101010101010101";	
 			String text = "https://Julia.coins:555 " + "100 zenny " + "From: " + walletStr + " To: " + recipient;
 			String pathStr = "./qrcodes/code0.png";
-			path = new File("./qrcodes/code0.png");
+			path = new File(pathStr);
 			boolean exists = path.exists();
 			while(exists==true) {
 				filenum++;	
@@ -152,10 +147,8 @@ public class QRCodeGUI {
 				MatrixToImageWriter.writeToFile(bitMatrix, "PNG", fil);
 			
 			} catch (WriterException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 	    }	 

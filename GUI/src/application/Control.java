@@ -1,4 +1,4 @@
-package application;
+package org.dilithium.application;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,62 +11,88 @@ import com.google.zxing.client.j2se.MatrixToImageWriter;
 import com.google.zxing.common.ByteMatrix;
 import com.google.zxing.qrcode.QRCodeWriter;
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXListView;
 
+import javafx.beans.property.ReadOnlyDoubleProperty;
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import javafx.stage.Window;
-import javafx.stage.WindowEvent;
 
 public class Control {
 
+	@FXML
+	private JFXListView<transactions> transactionHistory;
+	
+	@FXML
+	private ImageView QRCodePane;
+	
     @FXML
-    private JFXButton shopButton;
-
-    @FXML
-    private JFXButton recieveButton;
-
-    @FXML
-    private JFXButton logoutButton;
-
-    @FXML
-    private JFXButton QRCodeButton;
+    private JFXButton QRCodeButton, historyButton, logoutButton, shopButton, recieveButton;
 
     @FXML
     private Label Balance;
-    // Balance.setText("$ 0");
+    //Balance.setText("$ 0");
 
     @FXML
     private JFXButton sendButton;
     
     @FXML
     void Send(ActionEvent event) {
-    	System.out.println("Send dialog");
+     	try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Transaction.fxml"));
+            Parent root1 = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.setTitle("");
+            stage.setScene(new Scene(root1)); 
+            stage.show();
+          }
+		catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
-    void Recieve(ActionEvent event) {
-    	System.out.println("Recieve dialog");
+    void history(ActionEvent event) {
+    	System.out.println("History dialog");
+    	try {
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("History.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initStyle(StageStyle.UNDECORATED);
+            //stage.setTitle("");
+            stage.setScene(new Scene(root));  
+            stage.show();
+          }
+		catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 
     @FXML
     void Close(ActionEvent event) {
-    	// close the pane
-    	System.out.println("goodbye.");
+    	// close the pane we are on
     	Node source = (Node) event.getSource(); 
     	Stage stage = (Stage) source.getScene().getWindow(); 
     	stage.close();
-    
     	
+    }
+    
+    @FXML
+    void getShop(ActionEvent event) {
+    	System.out.println("go online");
+    	System.out.println("build a shop");
+    	System.out.println("connect our coin");
     }
     
     @FXML
@@ -79,20 +105,17 @@ public class Control {
             stage.initStyle(StageStyle.UNDECORATED);
             //stage.setTitle("");
             stage.setScene(new Scene(root1));  
+            generateQRCodeImage("sample", 500, 500, "./qrcodes/code0.png");
+            //createImageView();
+            
             stage.show();
           }
 		catch (Exception e) {
 			e.printStackTrace();
 		}
     }
-    
-    @FXML
-    void getShop(ActionEvent event) {
-    	System.out.println("go online");
-    	System.out.println("build a shop");
-    	System.out.println("connect our coin");
-    }
    
+    // this has to be moved
 	private static void generateQRCodeImage(String text, int width, int height, String filePath) {
 	    	QRCodeWriter qrCodeWriter = new QRCodeWriter();
 	        ByteMatrix bitMatrix;
@@ -101,7 +124,12 @@ public class Control {
 				Path path = FileSystems.getDefault().getPath(filePath);
 		        File fil = new File(path.toString());
 				MatrixToImageWriter.writeToFile(bitMatrix, "PNG", fil);
-			
+				String url = "file:///Users/Owner/Documents/School/CS210/GUI/src/application/qrcodes/code0.png";
+				System.out.println(url);
+				//Image image = new Image(url.toString(), true);
+				//ImageView imageView = createImageView();
+				
+				
 			} catch (WriterException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -109,23 +137,30 @@ public class Control {
 			}
 	    }
 	
-	public static void Initialize() {
-		double xOffset, yOffset;
-		
-		Window root = new Window();
-		root.setOnMousePressed(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                xOffset = event.getSceneX();
-                yOffset = event.getSceneY();
-            }
-        });
-        root.setOnMouseDragged(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent event) {
-                primaryStage.setX(event.getScreenX() - xOffset);
-                primaryStage.setY(event.getScreenY() - yOffset);
-            }
-        });
-	}
+private ImageView createImageView(ReadOnlyDoubleProperty widthProperty) {
+	ImageView imageView = new ImageView();
+	imageView.setPreserveRatio(true);
+	imageView.fitWidthProperty().bind(widthProperty);	
+	return imageView;
+}
+	
+	//@FXML
+	//public static void Initialize() {
+		//double xOffset, yOffset;
+		//Window root = new Window();
+		//root.setOnMousePressed(new EventHandler<MouseEvent>() {
+            //@Override
+            //public void handle(MouseEvent event) {
+                //xOffset = event.getSceneX();
+                //yOffset = event.getSceneY();
+            //}
+        //});
+        //root.setOnMouseDragged(new EventHandler<MouseEvent>() {
+            //@Override
+            //public void handle(MouseEvent event) {
+                //stage.setX(event.getScreenX() - xOffset);
+                //stage.setY(event.getScreenY() - yOffset);
+            //}
+        //});
+	//}
 }

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="475.0" prefWidth="843.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Control">
+   <children>
+      <SplitPane dividerPositions="0.29797979797979796" layoutX="1.0" layoutY="125.0" prefHeight="350.0" prefWidth="843.0" AnchorPane.leftAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="81.0">
+               <children>
+                  <JFXListView fx:id="transactionHistory" layoutX="14.0" layoutY="-83.0" prefHeight="348.0" prefWidth="247.0" style="-fx-background-color: #f8b195;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                  <ImageView fitHeight="348.0" fitWidth="1099.0" layoutX="-852.0" AnchorPane.rightAnchor="0.0">
+                     <image>
+                        <Image url="@../../../../../../../../../Pictures/peach.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #c06c84;">
+               <children>
+                  <AnchorPane layoutX="6.0" prefHeight="348.0" prefWidth="586.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ImageView fitHeight="348.0" fitWidth="849.0" AnchorPane.leftAnchor="0.0">
+                           <image>
+                              <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/pinkish.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="34.0" layoutY="31.0" text="To:" textFill="#6c5b7b">
+                           <font>
+                              <Font name="Book Antiqua Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="87.0" text="From:" textFill="#6c5b7b">
+                           <font>
+                              <Font name="Book Antiqua Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="28.0" layoutY="148.0" text="Amount:" textFill="#6c5b7b">
+                           <font>
+                              <Font name="Book Antiqua Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="32.0" layoutY="204.0" text="Fee Paid:" textFill="#6c5b7b">
+                           <font>
+                              <Font name="Book Antiqua Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="33.0" layoutY="264.0" text="Message:" textFill="#6c5b7b">
+                           <font>
+                              <Font name="Book Antiqua Bold Italic" size="20.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField layoutX="143.0" layoutY="21.0" prefHeight="31.0" prefWidth="416.0" />
+                        <JFXTextField layoutX="143.0" layoutY="77.0" prefHeight="31.0" prefWidth="416.0" />
+                        <JFXTextField layoutX="143.0" layoutY="146.0" prefHeight="31.0" prefWidth="416.0" />
+                        <JFXTextField layoutX="143.0" layoutY="202.0" prefHeight="31.0" prefWidth="416.0" />
+                        <JFXTextField layoutX="143.0" layoutY="262.0" prefHeight="31.0" prefWidth="416.0" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+      <AnchorPane layoutX="-1.0" prefHeight="127.0" prefWidth="843.0" style="-fx-background-color: #c06c84;" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="129.0" fitWidth="843.0" layoutY="-1.0">
+               <image>
+                  <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/pinkish.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="312.0" layoutY="49.0" text="Transaction History" textFill="#6c5b7b">
+               <font>
+                  <Font name="Book Antiqua Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <ImageView layoutX="103.0" layoutY="43.0">
+               <image>
+                  <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/Dilithium.png" />
+               </image>
+            </ImageView>
+            <JFXButton fx:id="cancelButton" layoutX="779.0" layoutY="23.0" onAction="#Close" prefHeight="31.0" prefWidth="48.0" style="-fx-background-image: ../Pictures/icons8-cancel-64.png;" text="">
+               <graphic>
+                  <ImageView fitHeight="31.0" fitWidth="30.0">
+                     <image>
+                        <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/icons8-cancel-64.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </JFXButton>
+         </children></AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="427.0" prefWidth="610.0" style="-fx-background-color: #c06c84;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Control">
+   <children>
+      <ImageView fitHeight="427.0" fitWidth="610.0" layoutX="2.0">
+         <image>
+            <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/pinkish.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="55.0" layoutY="61.0" text="To:" />
+      <Label layoutX="55.0" layoutY="125.0" text="From:" />
+      <Label layoutX="55.0" layoutY="191.0" text="Amount:" />
+      <JFXTextField layoutX="158.0" layoutY="56.0" prefHeight="31.0" prefWidth="397.0" />
+      <JFXTextField layoutX="158.0" layoutY="120.0" prefHeight="31.0" prefWidth="397.0" />
+      <JFXTextField layoutX="158.0" layoutY="181.0" />
+      <JFXButton fx:id="Send" layoutX="247.0" layoutY="367.0" onAction="#Send" prefHeight="31.0" prefWidth="120.0" style="-fx-background-color: #6C5B7B;" text="Send" textFill="#f8b195" />
+      <JFXTextField layoutX="158.0" layoutY="242.0" />
+      <Label layoutX="55.0" layoutY="252.0" text="Fee:" />
+      <JFXTextField layoutX="158.0" layoutY="302.0" prefHeight="31.0" prefWidth="397.0" />
+      <Label layoutX="55.0" layoutY="307.0" text="Message:" />
+      <JFXButton fx:id="cancelButton" layoutX="546.0" layoutY="14.0" onAction="#Close" prefHeight="31.0" prefWidth="48.0" style="-fx-background-image: ../Pictures/icons8-cancel-64.png;" text="">
+         <graphic>
+            <ImageView fitHeight="31.0" fitWidth="30.0">
+               <image>
+                  <Image url="@../../../../../../../NetTests-master/src/main/java/org/dilithium/Pictures/icons8-cancel-64.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+
+   </children>
+</AnchorPane>

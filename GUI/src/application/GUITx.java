@@ -1,6 +1,5 @@
-package application;
+package org.dilithium.application;
 import java.awt.EventQueue;
-import java.security.Security;
 
 import javax.swing.JFrame;
 
